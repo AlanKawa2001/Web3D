@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="module.js"></script>
+  <script type="module" src="Models.js"></script>
+  <script type="module" src="mode.js"></script>
+  <script src="ajax.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="navbar">
+    <div id="logo">
+      <img src="assets/logo.jpg" alt="">
+    </div>
+  </div>
+
+  <header>
+    <div id="container">
+      <model-viewer id="model-viewer" src="assets/cola.glb" alt="3D Object" camera-controls ar ios-src="assets/cola.usdz"></model-viewer>
+      <div id="controls">
+        <div class="model-description">
+          <p>This x3D model of the Fanta model has been created in 3ds max and used transcoders to x3D for display online</p>
+        </div>
+
+        <h3>Controls</h3>
+        <label for="render-mode">Render Mode:</label>
+        <select id="render-mode" onchange="setRenderMode()">
+          <option value="mask">Mask</option>
+          <option value="opaque">Opaque</option>
+          <option value="blend">Blend</option>
+        </select>
+
+        <label for="lighting">Lighting:</label>
+        <select id="lighting" onchange="setLighting()">
+          <option value="auto">Auto</option>
+          <option value="hdr">HDR</option>
+          <option value="unlit">Unlit</option>
+        </select>
+
+        <label for="camera-view">Camera View:</label>
+        <select id="camera-view" onchange="setCameraView()">
+          <option value="orbit">Orbit</option>
+          <option value="back">Back</option>
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+          <option value="top">Top</option>
+        </select>
+      </div>
+    </div>
+    
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </header>
+</body>
+</html>
